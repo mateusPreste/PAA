@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/PAA.dir/main.cpp.o CMakeFiles/PAA.dir/quickSort.cpp.o CMakeFiles/PAA.dir/radixSort.cpp.o CMakeFiles/PAA.dir/heapSort.cpp.o CMakeFiles/PAA.dir/shellSort.cpp.o CMakeFiles/PAA.dir/sortAlgorithm.cpp.o  -o PAA.exe -Wl,--out-implib,libPAA.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
