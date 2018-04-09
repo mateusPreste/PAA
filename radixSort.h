@@ -10,8 +10,8 @@
 
 class radixSort : public sortAlgorithm{
 public:
-    void radix(int[], int);
-    void sort(int[], int);
+    radixSort(const std::string&);
+    virtual void internal(int[], int, int);
 };
 
 

@@ -7,14 +7,19 @@
 
 
 #include <ctime>
+#include <string>
 
 class sortAlgorithm {
 protected:
     clock_t tStart;
     clock_t tEnd;
+    std::string algorithmName;
+    int size;
 public:
-    virtual void time();
-    void sort();
+    explicit sortAlgorithm(const std::string&);
+    void time(const std::string&);
+    virtual void internal(int*, int, int) = 0;
+    void sort(int*, int);
 };
 
 

@@ -1,11 +1,18 @@
 #include <iostream>
 #include <unordered_set>
 #include <stdlib.h>
+#include <string>
 #include <cstdlib>
+#include <vector>
 #include "heapSort.h"
 #include "quickSort.h"
 #include "shellSort.h"
 #include "radixSort.h"
+
+heapSort heap("HeapSort");
+quickSort quick("QuickSort");
+radixSort radix("RadixSort");
+shellSort shell("ShellSort");
 
 int* returnAlmostSameValueVector(int size){
     auto* vetor = new int[size];
@@ -50,35 +57,50 @@ int* randomList(int size){
 }
 
 int main() {
-    heapSort heap;
-    quickSort quick;
-    radixSort radix;
-    shellSort shell;
+    std::vector<int> list;
 
-    int size = 300;
-    auto* vetor = randomList(size);
-        heap.heap(vetor, size);
-        delete[] vetor;
-    auto* vetor1 = returnAlmostSameValueVector(size);
-        quick.quick(vetor1, size);
-        delete[] vetor1;
-    auto* vetor2 = returnAlmostSameValueVector(size);
-       radix.radix(vetor2, size);
-       delete[] vetor2;
-    auto* vetor3 = returnAlmostSameValueVector(size);
-       shell.shell(vetor3, size);
-       delete[] vetor3;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        heap.sort(randomList(size), size);
+        heap.time("90P");
+    }
 
-
-
-    std::cout << "Heap Sort " << std::endl;
-        heap.time();
-    std::cout << "Quick Sort " << std::endl;
-        quick.time();
-    std::cout << "Radix Sort " << std::endl;
-        radix.time();
-    std::cout << "Shell Sort " << std::endl;
-        shell.time();
+    std::cout << std::endl;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        quick.sort(randomList(size), size);
+        quick.time("90P");
+    }
+    std::cout << std::endl;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        radix.sort(randomList(size), size);
+        radix.time("90P");
+    }
+    std::cout << std::endl;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        shell.sort(randomList(size), size);
+        shell.time("90P");
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        heap.sort(returnAlmostSameValueVector(size), size);
+        heap.time("rand");
+    }
+    std::cout << std::endl;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        quick.sort(returnAlmostSameValueVector(size), size);
+        quick.time("rand");
+    }
+    std::cout << std::endl;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        radix.sort(returnAlmostSameValueVector(size), size);
+        radix.time("rand");
+    }
+    std::cout << std::endl;
+    for (int size = 2097152; size >= 32 ; size/=2) {
+        shell.sort(returnAlmostSameValueVector(size), size);
+        shell.time("rand");
+    }
+    std::cout << std::endl;
 
     std::cout << "Hello, World!" << std::endl;
     return 0;

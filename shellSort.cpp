@@ -4,7 +4,7 @@
 
 #include "shellSort.h"
 
-void shellSort::sort(int *vet, int size) {
+void shellSort::internal(int *vet, int, int size) {
     int i , j , value;
     int gap = 1;
     while(gap < size) {
@@ -24,8 +24,6 @@ void shellSort::sort(int *vet, int size) {
     }
 }
 
-void shellSort::shell(int * vet, int size) {
-    tStart = clock();
-    sort(vet, size);
-    tEnd = clock();
+shellSort::shellSort(const std::string& name):sortAlgorithm(name) {
+
 }

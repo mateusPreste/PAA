@@ -10,8 +10,8 @@
 
 class heapSort : public sortAlgorithm{
 public:
-    void heap(int[], int);
-    void sort(int[], int);
+    explicit heapSort(const std::string&);
+    virtual void internal(int[], int, int);
 };
 
 

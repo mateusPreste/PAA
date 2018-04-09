@@ -10,8 +10,8 @@
 
 class shellSort : public sortAlgorithm{
 public:
-    void shell(int*, int);
-    void sort(int*, int);
+    shellSort(const std::string&);
+    virtual void internal(int*, int, int);
 };
 
 

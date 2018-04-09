@@ -4,7 +4,7 @@
 
 #include "heapSort.h"
 
-void heapSort::sort(int a[], int n) {
+void heapSort::internal(int a[], int, int n) {
     int i = n / 2, pai, filho, t;
     while(true) {
         if (i > 0) {
@@ -35,8 +35,4 @@ void heapSort::sort(int a[], int n) {
     }
 }
 
-void heapSort::heap(int a[], int n) {
-    tStart = clock();
-    sort(a, n);
-    tEnd = clock();
-}
+heapSort::heapSort(const std::string &name):sortAlgorithm(name) {}

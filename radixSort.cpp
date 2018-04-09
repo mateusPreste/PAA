@@ -5,7 +5,7 @@
 #include <malloc.h>
 #include "radixSort.h"
 
-void radixSort::sort(int vetor[], int tamanho){
+void radixSort::internal(int vetor[], int, int tamanho){
     int i;
     int *b;
     int maior = vetor[0];
@@ -34,8 +34,7 @@ void radixSort::sort(int vetor[], int tamanho){
     free(b);
 }
 
-void radixSort::radix(int * vetor, int n) {
-    tStart = clock();
-    sort(vetor, n);
-    tEnd = clock();
+radixSort::radixSort(const std::string& name):sortAlgorithm(name) {
+
 }
+

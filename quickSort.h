@@ -10,8 +10,8 @@
 
 class quickSort : public sortAlgorithm{
 public:
-    void quick(int[], int);
-    void sort(int[], int, int);
+    quickSort(const std::string&);
+    virtual void internal(int[], int, int);
 };
 
 

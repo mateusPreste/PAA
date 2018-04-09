@@ -4,7 +4,7 @@
 
 #include "quickSort.h"
 
-void quickSort::sort(int values[], int began, int end) {
+void quickSort::internal(int values[], int began, int end) {
     int i, j, pivo, aux;
     i = began;
     j = end-1;
@@ -29,13 +29,11 @@ void quickSort::sort(int values[], int began, int end) {
         }
     }
     if(j > began)
-        sort(values, began, j+1);
+        internal(values, began, j+1);
     if(i < end)
-        sort(values, i, end);
+        internal(values, i, end);
 }
 
-void quickSort::quick(int values[], int size) {
-    tStart = clock();
-    sort(values, 0, size);
-    tEnd = clock();
+quickSort::quickSort(const std::string & name):sortAlgorithm(name) {
+
 }
